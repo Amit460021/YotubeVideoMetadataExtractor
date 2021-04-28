@@ -13,11 +13,11 @@ public class JmsConsumer {
 	private YtvmePartBService ytvmePartBService;
 	
 	@JmsListener(destination = "${intial.queue}", containerFactory="jmsFactory")
-	public void receive(String xmlMsg){
+	public void receive(String xmlMsg) throws PartBServiceException{
 		try {
 		ytvmePartBService.sendToPartBQueue(xmlMsg);
 		}catch(Exception excep) {
-			
+			throw new PartBServiceException(excep.getMessage());
 		}
 	}
 	
