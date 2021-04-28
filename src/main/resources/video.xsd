@@ -1,0 +1,12 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://www.cgi.com/VideoSchema.xsd"
+           targetNamespace="http://www.cgi.com/VideoSchema.xsd"
+           elementFormDefault="qualified">
+ <xsd:element name="video" type="tns:VideoType"/>
+ <xsd:complexType name="VideoType">
+  <xsd:sequence>
+   <xsd:element name="title" type="xsd:string" />
+   <xsd:element name="url" type="xsd:string"/>
+  </xsd:sequence>
+ </xsd:complexType>
+</xsd:schema>
